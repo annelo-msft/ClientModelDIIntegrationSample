@@ -1,4 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
+
+// Reference SCM version in
+// https://github.com/annelo-msft/azure-sdk-for-net/tree/aspire-aoai-demo
+// to get LoggerFactory on options for sample to run.
 using System.ClientModel.Primitives;
 
 namespace Clients.ToyClient;
