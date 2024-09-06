@@ -20,7 +20,7 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 // 1. Register the client with service collection
-builder.AddClient<ToyClient>((endpoint, options) => new ToyClient(endpoint, options));
+builder.AddToyClient();
 
 var app = builder.Build();
 
