@@ -8,7 +8,7 @@
 2. Extension: [Get endpoint from configuration](https://github.com/annelo-msft/ClientModelDIIntegrationSample/blob/main/AspireIntegrationToy/Microsoft.Extensions.ClientModel/ClientModelExtensions.cs#L17)
 3. Extension: [Add options to service collection](https://github.com/annelo-msft/ClientModelDIIntegrationSample/blob/main/AspireIntegrationToy/Microsoft.Extensions.ClientModel/ClientModelExtensions.cs#L23)
 4. Extension: [Add client creation delegate: IServiceProvider => TClient](https://github.com/annelo-msft/ClientModelDIIntegrationSample/blob/main/AspireIntegrationToy/Microsoft.Extensions.ClientModel/ClientModelExtensions.cs#L27C7-L27C76)
-5. App Page: [Code behind/PageModel constructor takes client]
+5. App Page: [Code behind/PageModel constructor takes client](https://github.com/annelo-msft/ClientModelDIIntegrationSample/blob/main/AspireIntegrationToy/AspireIntegrationToy/Pages/Index.cshtml.cs#L11)
 6. App Page: [Call client from request callback](https://github.com/annelo-msft/ClientModelDIIntegrationSample/blob/main/AspireIntegrationToy/AspireIntegrationToy/Pages/Index.cshtml.cs#L21)
 
 ## Open Questions
