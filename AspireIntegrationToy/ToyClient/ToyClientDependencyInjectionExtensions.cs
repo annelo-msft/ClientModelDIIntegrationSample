@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System.ClientModel.Primitives;
+using System.Net.Http;
 
 namespace Clients.ToyClient;
 
@@ -28,6 +29,15 @@ public static class ToyClientDependencyInjectionExtensions
 
             ILoggerFactory loggerFactory = provider.GetRequiredService<ILoggerFactory>();
             options.LoggerFactory = loggerFactory;
+
+            IHttpClientFactory? httpClientFactory = provider.GetService<IHttpClientFactory>();
+            if (httpClientFactory != null)
+            {
+                // TODO: should we get an instance instead?
+                HttpClient httpClient = httpClientFactory.CreateClient();
+
+                options.Transport = new HttpClientPipelineTransport(httpClient);
+            }
 
             return new ToyClient(uri, options);
         });

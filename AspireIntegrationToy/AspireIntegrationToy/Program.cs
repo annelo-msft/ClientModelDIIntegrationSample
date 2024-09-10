@@ -19,6 +19,9 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
 
+// Add HttpClient
+builder.Services.AddHttpClient("MyClient");
+
 // 1. Register the client with service collection
 builder.AddToyClient();
 
