@@ -7,22 +7,20 @@ namespace HttpClientFactoryToy.Pages;
 
 public class IndexModel : PageModel
 {
-    private readonly IHttpClientFactory _httpClientFactory;
+    private readonly HttpClient _httpClient;
     private readonly ILogger<IndexModel> _logger;
 
     public IndexModel(
-        IHttpClientFactory httpClientFactory,
+        HttpClient httpClient,
         ILogger<IndexModel> logger)
     {
-        _httpClientFactory = httpClientFactory;
+        _httpClient = httpClient;
         _logger = logger;
     }
 
     public async Task OnGetAsync()
     {
-        using HttpClient client = _httpClientFactory.CreateClient();
-
-        using HttpResponseMessage response = await client.GetAsync("https://www.microsoft.com");
+        using HttpResponseMessage response = await _httpClient.GetAsync("https://www.microsoft.com");
 
         HttpStatusCode status = response.StatusCode;
     }
