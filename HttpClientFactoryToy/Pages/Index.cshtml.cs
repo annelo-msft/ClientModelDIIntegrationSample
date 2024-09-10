@@ -20,7 +20,17 @@ public class IndexModel : PageModel
 
     public async Task OnGetAsync()
     {
-        using HttpResponseMessage response = await _httpClient.GetAsync("https://www.microsoft.com");
+        //using HttpResponseMessage response = await _httpClient.GetAsync("https://www.microsoft.com");
+
+        HttpRequestMessage message = new();
+        message.RequestUri = new Uri("https://www.microsoft.com");
+        message.Headers.Add("Content-Type", "application/json");
+        message.Method = HttpMethod.Get;
+        using HttpResponseMessage response = await _httpClient.SendAsync(message);
+
+
+        /*using HttpResponseMessage response =
+            await _httpClient.PostAsync("http://www.microsoft.com", new StringContent("{}"));*/
 
         HttpStatusCode status = response.StatusCode;
     }
